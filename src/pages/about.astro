@@ -1,4 +1,18 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
+<Layout title="Welcome to Astro." desc="This is description">
+  <main class="bg-backgroundColor">About us</main>
+  <div class="d-flex justify-center items-center">
+    <button id="button">Click</button>
+  </div>
+</Layout>
+
+<script>
+  const button = document.querySelector('#button');
+
+  button.addEventListener('click', () => {
+    alert('Zsigmond');
+  });
+</script>
