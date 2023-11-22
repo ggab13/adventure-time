@@ -1,17 +1,76 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/smileycycle.png';
+import beer from '../assets/beer.png';
 ---
 
 <header>
-  <div class="w-auto h-[100px]">
-    <Image src={logo} alt=" asd" class="w-auto h-[100px]" />
+  <nav
+    class="bg-backgroundColor flex p-5 h-100px content-center items-center justify-between"
+  >
+    <div class="flex content-center items-center gap-2">
+      <Image src={logo} alt="image of logo" class="w-auto h-[50px]" />
+      <a href="./" class="text-primaryColor text-4xl">Funtázia</a>
+    </div>
+    <div class="flex content-center items-center mx-0">
+      <ul class="hidden md:flex p-3 gap-3">
+        <li><a href="./about">About</a></li>
+        <li><a href="./about">Blog</a></li>
+      </ul>
+
+      <button
+        onclick="location.href='https://www.buymeacoffee.com/koborzaj'"
+        type="button"
+        class="text-amber bg-primaryColor hidden md:inline hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        <div class="flex">
+          Buy me a beer &nbsp;
+          <Image src={beer} class="w-auto h-[20px]" alt="picture of beer" />
+        </div>
+      </button>
+      <div class="md:hidden space-y-3 cursor-pointer" id="hamburger">
+        <div class="space-y-2 p-2">
+          <span class="block h-0.5 w-8 animate-pulse bg-primaryColor"></span>
+          <span class="block h-0.5 w-8 animate-pulse bg-primaryColor"></span>
+          <span class="block h-0.5 w-8 animate-pulse bg-primaryColor"></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="hidden md:hidden w-full flex flex-col items-center bg-primaryColor"
+    id="menu"
+  >
+    <ul class="text-base text-gray-700
+        pt-4
+        items-center">
+      <li>
+        <a class="md:p-4 py-2 block hover:text-purple-400" href="./">Home</a>
+      </li>
+      <li>
+        <a class="md:p-4 py-2 block hover:text-purple-400" href="./about"
+          >About us</a
+        >
+      </li>
+      <li>
+        <a class="md:p-4 py-2 block hover:text-purple-400" href="./blog">Blog</a
+        >
+      </li>
+    </ul>
   </div>
 </header>
-<nav>
-  <ul>
-    <li>Home</li>
-    <li><a href="/about">About</a></li>
-    <li>Blog</li>
-  </ul>
-</nav>
+
+<script>
+  const hamburger = document.querySelector('#hamburger');
+  const menu = document.querySelector('#menu');
+  let visible = false;
+  hamburger.addEventListener('click', () => {
+    if (visible == false) {
+      menu.classList.remove('hidden');
+      visible = true;
+    } else {
+      menu.classList.add('hidden');
+      visible = false;
+    }
+  });
+</script>

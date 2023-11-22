@@ -1,7 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import sevilla from '../assets/sevilla.jpg';
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class=""></main>
+  <main class="">
+    <div
+      class="mx-[500px] h-[700px] p-12 my-[100px] bg-backgroundColor rounded-md"
+    >
+      <h1 class="text-primaryColor p-2 text-2xl">Valami heading szöveg</h1>
+      <p class="font-judson text-textColor text-lg p-5">
+        Welcome to the React documentation! This page will give you an
+        introduction to the 80% of React concepts that you will use on a daily
+        basis. Welcome to the React documentation! This page will give you an
+        introduction to the 80% of React concepts that you will use on a daily
+        basis. Welcome to the React documentation! This page will give you an
+        introduction to the 80% of React concepts that you will use on a daily
+        basis. Welcome to the React documentation! This page will give you an
+        introduction to the 80% of React concepts that you will use on a daily
+        basis.
+      </p>
+      <button
+        type="button"
+        class="text-amber bg-primaryColor inline hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        About us
+      </button>
+      <Image
+        src={sevilla}
+        alt="sevilla"
+        class="w-[500px] mx-auto items-center"
+      />
+    </div>
+  </main>
 </Layout>

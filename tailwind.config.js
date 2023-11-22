@@ -2,13 +2,21 @@
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        judson: ['Judson', 'sans-serif'],
+        archivo: ['Archivo Black', 'sans-serif'],
+      },
+    },
     colors: {
       backgroundColor: '#201F41',
       primaryColor: '#D1788F',
       secondaryColor: '#422D53',
       accentColor: '#E4ACB2',
+      accentColor2: '#ECC4C9',
       textColor: '#FFFFFF',
+      black: '#020202',
+      amber: '#ffff00',
     },
     plugins: [],
   },
