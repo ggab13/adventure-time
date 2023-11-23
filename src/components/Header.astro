@@ -6,7 +6,7 @@ import beer from '../assets/beer.png';
 
 <header>
   <nav
-    class="bg-secondaryColor flex p-5 h-100px content-center items-center justify-between"
+    class="flex p-5 h-100px content-center items-center justify-between bg-secondaryColor"
   >
     <div class="flex content-center items-center gap-2">
       <Image src={logo} alt="image of logo" class="w-auto h-[50px]" />
@@ -14,47 +14,87 @@ import beer from '../assets/beer.png';
     </div>
     <div class="flex content-center items-center mx-0">
       <ul class="hidden md:flex p-3 gap-3">
-        <li><a href="./about">About</a></li>
-        <li><a href="./about">Blog</a></li>
+        <li><a href="./about" class="hover:text-primaryColor">About</a></li>
+        <li><a href="./about" class="hover:text-primaryColor">Blog</a></li>
       </ul>
 
       <button
         onclick="location.href='https://www.buymeacoffee.com/koborzaj'"
         type="button"
-        class="text-amber bg-primaryColor hidden md:inline hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="text-amber bg-primaryColor hidden md:inline hover:bg-accentColor hover:text-textColor focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
       >
         <div class="flex">
           Buy me a beer &nbsp;
           <Image src={beer} class="w-auto h-[20px]" alt="picture of beer" />
         </div>
       </button>
-      <div class="md:hidden space-y-3 cursor-pointer" id="hamburger">
+      <!--  <div class="md:hidden space-y-3 cursor-pointer" id="hamburger2">
         <div class="space-y-2 p-2">
-          <span class="block h-0.5 w-8 animate-pulse bg-primaryColor"></span>
+          <span
+            class="block h-0.5 w-8 animate-pulse transform ease-in-out bg-primaryColor"
+          ></span>
           <span class="block h-0.5 w-8 animate-pulse bg-primaryColor"></span>
           <span class="block h-0.5 w-8 animate-pulse bg-primaryColor"></span>
         </div>
+      </div> -->
+
+      <div>
+        <button
+          class="md:hidden relative group space-y-3 cursor-pointer"
+          id="hamburger"
+        >
+          <div
+            class="flex flex-col justify-between w-[30px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden"
+          >
+            <div
+              class="bg-primaryColor h-[2px] w-10 transform transition-all duration-300 origin-left group-focus:translate-x-10"
+            >
+            </div>
+            <div
+              class="bg-primaryColor h-[2px] w-10 rounded transform transition-all duration-300 group-focus:translate-x-10 delay-75"
+            >
+            </div>
+            <div
+              class="bg-primaryColor h-[2px] w-10 transform transition-all duration-300 origin-left group-focus:translate-x-10 delay-150"
+            >
+            </div>
+
+            <div
+              class="absolute items-center justify-between transform transition-all duration-500 top-2.5 -translate-x-10 group-focus:translate-x-0 flex w-0 group-focus:w-12"
+            >
+              <div
+                class="absolute bg-primaryColor h-[2px] w-6 transform transition-all duration-500 rotate-0 delay-300 group-focus:rotate-45"
+              >
+              </div>
+              <div
+                class="absolute bg-primaryColor h-[2px] w-6 transform transition-all duration-500 -rotate-0 delay-300 group-focus:-rotate-45"
+              >
+              </div>
+            </div>
+          </div>
+        </button>
       </div>
     </div>
   </nav>
   <div
-    class="hidden md:hidden w-full flex flex-col items-center bg-primaryColor"
+    class="hidden md:hidden w-full flex flex-col items-center bg-primaryColor transition-all duration-200"
     id="menu"
   >
-    <ul class="text-base text-gray-700
+    <ul
+      class="text-base text-gray-700
         pt-4
-        items-center">
-      <li>
-        <a class="md:p-4 py-2 block hover:text-purple-400" href="./">Home</a>
+        items-center
+        text-center"
+    >
+      <li class="">
+        <a class="md:p-4 py-1 block hover:text-amber" href="./">Home</a>
       </li>
-      <li>
-        <a class="md:p-4 py-2 block hover:text-purple-400" href="./about"
-          >About us</a
+      <li class="">
+        <a class="md:p-4 py-2 block hover:text-amber" href="./about">About us</a
         >
       </li>
-      <li>
-        <a class="md:p-4 py-2 block hover:text-purple-400" href="./blog">Blog</a
-        >
+      <li class="">
+        <a class="md:p-4 py-2 block hover:text-amber" href="./blog">Blog</a>
       </li>
     </ul>
   </div>
@@ -65,12 +105,9 @@ import beer from '../assets/beer.png';
   const menu = document.querySelector('#menu');
   let visible = false;
   hamburger.addEventListener('click', () => {
-    if (visible == false) {
-      menu.classList.remove('hidden');
-      visible = true;
-    } else {
-      menu.classList.add('hidden');
-      visible = false;
-    }
+    menu.classList.toggle('hidden');
+  });
+  hamburger.addEventListener('focusout', () => {
+    menu.classList.add('hidden');
   });
 </script>
