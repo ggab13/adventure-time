@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+
+import gaborImage from '../assets/gabor2.jpg';
+import andreaImage from '../assets/andrea.jpg';
+
+const { user } = Astro.props;
+---
+
+<div class="flex">
+  <div class="p-12 bg-backgroundColor w-4/6">
+    <div class="w-[1200px] pt-20">
+      <Image
+        src={user.name == 'Gábor' ? gaborImage : andreaImage}
+        alt="gabor"
+        class="border-4 border-black"
+      />
+    </div>
+  </div>
+  <div class="p-20 m-20 bg-secondaryColor w-2/6">
+    <h1 class="text-primaryColor p-2 text-4xl">
+      {user.name}
+    </h1>
+    <p class="font-judson text-textColor text-2xl p-15 m-30">
+      {user.story}
+    </p>
+  </div>
+</div>

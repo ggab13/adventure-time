@@ -1,18 +1,81 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import data from '../data.json';
+import AndreaAbout from '../components/AndreaAbout.astro';
+import GaborAbout from '../components/GaborAbout.astro';
+let personSwitch = true;
+
+const gabor = data[0];
+const andrea = data[1];
+
+const { message = 'Welcome, world!' } = Astro.props;
 ---
 
 <Layout title="Welcome to Astro." desc="This is description">
-  <main class="bg-backgroundColor">About us</main>
-  <div class="d-flex justify-center items-center">
-    <button id="button">Click</button>
-  </div>
+  <main class="bg-backgroundColor">
+    <section>
+      <!--  <div class="flex h-screen">
+      <div class="p-20 bg-secondaryColor w-2/6">
+        <h1 class="text-primaryColor p-2 text-4xl">
+          {personSwitch ? gabor.heading : andrea.heading}
+        </h1>
+        <p class="font-judson text-textColor text-2xl p-15 m-30">
+          {personSwitch ? gabor.story : andrea.story}
+        </p>
+      </div>
+      <div class="p-12 bg-backgroundColor w-4/6">
+        <div class="w-[1200px] pt-20">
+          <Image
+            src={personSwitch ? gaborImage : andreaImage}
+            alt="gabor"
+            class="border-4 border-black"
+          />
+        </div>
+      </div>
+    </div> -->
+      <!--     <Person user={personSwitch ? gabor : andrea} /> -->
+
+      <div id="gabor">
+        <GaborAbout user={gabor} />
+      </div>
+      <div id="andrea" class="hidden">
+        <AndreaAbout user={andrea} />
+      </div>
+    </section>
+    <!--  <button
+      id="switch"
+      class="absolute top-3 left-1/2 border-4 my-auto border-white bg-textColor text-black text-3xl"
+      >Click me</button
+    > -->
+
+    <div class="absolute top-12 left-1/2 my-auto">
+      <label class="inline-flex items-center me-5 cursor-pointer">
+        <input type="checkbox" value="" class="sr-only peer" checked />
+
+        <div
+          id="switch"
+          class="w-11 h-6 bg-primaryColor rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-purple-300 dark:peer-focus:ring-textColor peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-amber after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-amber after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-amber peer-checked:bg-primaryColor"
+        >
+        </div>
+        <span
+          class="ms-3 text-primaryColor font-medium text-gray-900 dark:text-gray-300"
+          >A - G</span
+        >
+      </label>
+    </div>
+  </main>
 </Layout>
 
 <script>
-  const button = document.querySelector('#button');
+  let personSwitch = true;
+  const gaborblog = document.querySelector('#gabor');
+  const andreablog = document.querySelector('#andrea');
 
-  button.addEventListener('click', () => {
-    alert('Zsigmond');
+  const button2 = document.querySelector('#switch');
+
+  button2.addEventListener('click', () => {
+    gaborblog.classList.toggle('hidden');
+    andreablog.classList.toggle('hidden');
   });
 </script>

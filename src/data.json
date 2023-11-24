@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Gábor",
+    "story": "Welcome to the React documentation! This page will give you an introduction to the 80% of React concepts that you will use on a daily basis. Welcome to the React documentation! This page will give you an introduction to the 80% of React concepts that you will use on a daily basis. ",
+    "image": "../assets/gabor2.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Andrea",
+    "story": "Welcome to the React documentation! This page will give you an introduction to the 80% of React concepts that you will use on a daily basis. Welcome to the React documentation! This page will give you an introduction to the 80% of React concepts that you will use on a daily basis. ",
+    "image": "../assets/andrea.jpg"
+  }
+]

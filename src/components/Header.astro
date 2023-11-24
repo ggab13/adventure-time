@@ -104,10 +104,21 @@ import beer from '../assets/beer.png';
   const hamburger = document.querySelector('#hamburger');
   const menu = document.querySelector('#menu');
   let visible = false;
+  let clicked = 0;
   hamburger.addEventListener('click', () => {
     menu.classList.toggle('hidden');
+    clicked++;
+    if (clicked % 2 == 0) {
+      hamburger.classList.toggle('group');
+      clicked = 1;
+    }
   });
   hamburger.addEventListener('focusout', () => {
     menu.classList.add('hidden');
+    clicked++;
+    if (clicked % 2 == 0) {
+      hamburger.classList.toggle('group');
+      clicked = 1;
+    }
   });
 </script>
