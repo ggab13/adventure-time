@@ -16,7 +16,7 @@ export default {
       accentColor2: '#422D53',
       textColor: '#FFFFFF',
       black: '#020202',
-      amber: '#ffff00',
+      amber: '#ffcc00',
     },
     plugins: [],
   },

@@ -9,15 +9,20 @@ const { user } = Astro.props;
 
 <div class="flex">
   <div class="p-20 m-20 bg-secondaryColor w-2/6">
-    <h1 class="text-primaryColor p-2 text-4xl">
+    <h1 class="text-primaryColor p-3 text-4xl">
       {user.name}
     </h1>
-    <p class="font-judson text-textColor text-2xl p-15 m-30">
+    <p class="font-judson text-textColor text-2xl p-15 mx-5">
       {user.story}
     </p>
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+
+    <i class="fas fa-music"></i>
+    <i class="fa fa-bandcamp" aria-hidden="true"></i>
   </div>
   <div class="p-12 bg-backgroundColor w-4/6">
-    <div class="w-[1200px] pt-20">
+    <div class="w-[1100px] pt-20">
       <Image
         src={user.name == 'Gábor' ? gaborImage : andreaImage}
         alt="gabor"

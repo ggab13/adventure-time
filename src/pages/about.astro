@@ -55,12 +55,13 @@ const { message = 'Welcome, world!' } = Astro.props;
 
         <div
           id="switch"
-          class="w-11 h-6 bg-primaryColor rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-purple-300 dark:peer-focus:ring-textColor peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-amber after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-amber after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-amber peer-checked:bg-primaryColor"
+          class="w-11 h-6 bg-primaryColor rounded-full peer dark:bg-gray-700  peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-textColor after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-textColor after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-textColor peer-checked:bg-primaryColor"
         >
         </div>
         <span
-          class="ms-3 text-primaryColor font-medium text-gray-900 dark:text-gray-300"
-          >A - G</span
+          class="ms-3 text-textColor font-medium text-gray-900 dark:text-gray-300"
+        >
+          <span id="focusAndi">A</span> - <span id="focusGabor" class="text-amber">G</span></span
         >
       </label>
     </div>
@@ -70,12 +71,16 @@ const { message = 'Welcome, world!' } = Astro.props;
 <script>
   let personSwitch = true;
   const gaborblog = document.querySelector('#gabor');
+  const gfocus = document.querySelector('#focusGabor');
   const andreablog = document.querySelector('#andrea');
+  const afocus = document.querySelector('#focusAndi');
 
   const button2 = document.querySelector('#switch');
 
   button2.addEventListener('click', () => {
     gaborblog.classList.toggle('hidden');
+    gfocus.classList.toggle('text-amber')
     andreablog.classList.toggle('hidden');
+    afocus.classList.toggle('text-amber')
   });
 </script>
