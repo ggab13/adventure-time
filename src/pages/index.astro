@@ -2,11 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import sevilla from '../assets/sevilla.jpg';
+import Hero from '../components/Hero.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="">
-    <div
+  <main class="w-full">
+    <Hero />
+    <!-- <div
       class="mx-[500px] h-[700px] p-12 my-[100px] bg-secondaryColor rounded-md"
     >
       <h1 class="text-primaryColor p-2 text-2xl">Valami heading szöveg</h1>
@@ -32,6 +34,6 @@ import sevilla from '../assets/sevilla.jpg';
         alt="sevilla"
         class="w-[500px] mx-auto items-center"
       />
-    </div>
+    </div> -->
   </main>
 </Layout>

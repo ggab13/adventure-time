@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import heroImage from '../assets/edro.jpg'
+
+---
+
+<section class="w-full h-fit py-16">
+  <div
+    class="max-w-7xl w-full h-full mx-auto flex flex-wrap-reverse gap-8 md:gap-0 px-3"
+  >
+    <div class="grow shrink basis-1 p-5 flex flex-col justify-center">
+      <h1 class="text-5xl text-accentColor2 leading-[1.1]" style="text-shadow: 1px 1px orange, 4px 4px black; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white; -webkit-text-fill-color: transparent">
+        Welcome to our Funtázia Adventure blog
+      </h1>
+      <p class="font-judson text-2xl text-black leading-7 my-4">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+        commodi, perspiciatis blanditiis at perferendis consectetur
+      </p>
+      <a class="font-judson text-2xl text-black underline underline-offset-4" href="/blog">Our blog</a>
+    </div>
+    <div class="grow shrink basis-1">
+      <div class="rounded-full w-[380px] h-[380px] sm:w-[420px] sm:h-[420px] lg:w-[480px] lg:h-[480px] object-scale-down overflow-hidden mx-auto shadow-sm">
+        <Image class="rounded-full w-full h-full block object-cover translate-x-[-30%] scale-[2.0]" src={heroImage} alt="Hero Image"/>
+      </div>
+    </div>
+  </div>
+</section>
