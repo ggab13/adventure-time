@@ -1,0 +1,35 @@
+---
+
+import { useSanityClient } from 'astro-sanity';
+import { Image } from 'astro:assets';
+import { getFirstBlogPost, urlForImage } from '../../lib/api.js';
+import Main from '../../components/MainBlog.astro';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await useSanityClient().fetch(`*[_type == "funtazia"]`);
+
+  return posts.map(({ slug, content, headline, image }) => {
+    return {
+      params: { slug: slug.current },
+      props: { content, headline, image },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+const { headline, content, image } = Astro.props;
+---
+
+<Layout>
+  <Main>
+    <section>
+      <div class="grid bg-secondaryColor">
+        A post about {slug}
+        <h1 class="text-primaryColor text-3xl">{headline}</h1>
+        <p>{content}</p>
+        <img src={image ? urlForImage(image) : ''} alt="Picture of blog post" />
+      </div>
+    </section>
+  </Main>
+</Layout>

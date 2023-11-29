@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets';
 import logo from '../assets/smileycycle.png';
 import beer from '../assets/beer.png';
+
+const blog = "./blog"
 ---
 
 <header>
@@ -10,14 +12,14 @@ import beer from '../assets/beer.png';
   >
     <div class="flex content-center items-center gap-2">
       <Image src={logo} alt="image of logo" class="w-auto h-[50px]" />
-      <a href="./" class="text-primaryColor text-4xl"
+      <a href="../" class="text-primaryColor text-4xl"
         ><span class="text-amber">Fun</span>tázia</a
       >
     </div>
     <div class="flex content-center items-center">
       <ul class="hidden md:flex p-3 gap-3">
-        <li><a href="./about" class="hover:text-primaryColor">About</a></li>
-        <li><a href="./blog" class="hover:text-primaryColor">Blog</a></li>
+        <li><a href="../about" class="hover:text-primaryColor">About</a></li>
+        <li><a href="../blog" class="hover:text-primaryColor">Blog</a></li>
       </ul>
 
       <button

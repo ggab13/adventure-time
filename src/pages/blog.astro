@@ -2,10 +2,42 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import sevilla from '../assets/sevilla.jpg';
+import Main from '../components/MainBlog.astro';
+
+import { getFirstBlogPost, urlForImage } from '../lib/api.js';
+const posts = await getFirstBlogPost();
+
+
+export async function getStaticPaths() {
+  const posts = await useSanityClient().fetch(`*[_type == "funtazia"]`);
+
+  return posts.map(({ slug, content, headline, image }) => {
+    return {
+      params: { slug: slug.current },
+      props: { content, headline, image },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+const { headline, content, image } = Astro.props;
+/* console.log('\n' + image + ' képgeci \n'); */
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="">
-    <section></section>
-  </main>
+  <Main>
+    <section>
+      {
+        posts && (
+          <ul>
+            {posts.map((post) => (
+              <li>
+                <a href={`funtazia/`+post.slug.current}>{post.headline}</a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </section>
+  </Main>
 </Layout>
