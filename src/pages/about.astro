@@ -13,8 +13,8 @@ const { message = 'Welcome, world!' } = Astro.props;
 ---
 
 <Layout title="Welcome to Astro." desc="This is description">
-  <main class="bg-backgroundColor">
-    <section>
+  <main class="bg-backgroundColor w-full">
+    <section class="w-full h-fit">
       <!--  <div class="flex h-screen">
       <div class="p-20 bg-secondaryColor w-2/6">
         <h1 class="text-primaryColor p-2 text-4xl">
@@ -36,10 +36,10 @@ const { message = 'Welcome, world!' } = Astro.props;
     </div> -->
       <!--     <Person user={personSwitch ? gabor : andrea} /> -->
 
-      <div id="gabor">
+      <div id="gabor" class="p-12 mx-auto">
         <GaborAbout user={gabor} />
       </div>
-      <div id="andrea" class="hidden">
+      <div id="andrea" class="hidden p-12 mx-auto">
         <AndreaAbout user={andrea} />
       </div>
     </section>
@@ -49,7 +49,7 @@ const { message = 'Welcome, world!' } = Astro.props;
       >Click me</button
     > -->
 
-    <div class="absolute top-12 left-1/2 my-auto">
+    <div class="absolute top-28 left-1/2 my-auto  my-5">
       <label class="inline-flex items-center me-5 cursor-pointer">
         <input type="checkbox" value="" class="sr-only peer" checked />
 
@@ -61,7 +61,7 @@ const { message = 'Welcome, world!' } = Astro.props;
         <span
           class="ms-3 text-textColor font-medium text-gray-900 dark:text-gray-300"
         >
-          <span id="focusAndi">A</span> - <span id="focusGabor" class="text-amber">G</span></span
+          <span id="focusAndi">A</span> - <span id="focusGabor" class="text-secondaryColor">G</span></span
         >
       </label>
     </div>
@@ -79,8 +79,8 @@ const { message = 'Welcome, world!' } = Astro.props;
 
   button2.addEventListener('click', () => {
     gaborblog.classList.toggle('hidden');
-    gfocus.classList.toggle('text-amber')
+    gfocus.classList.toggle('text-secondaryColor')
     andreablog.classList.toggle('hidden');
-    afocus.classList.toggle('text-amber')
+    afocus.classList.toggle('text-secondaryColor')
   });
 </script>

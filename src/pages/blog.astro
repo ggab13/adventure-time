@@ -3,21 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import sevilla from '../assets/sevilla.jpg';
 import Main from '../components/MainBlog.astro';
+import Card from '../components/Card.astro';
 
 import { getFirstBlogPost, urlForImage } from '../lib/api.js';
 const posts = await getFirstBlogPost();
 
 
-export async function getStaticPaths() {
-  const posts = await useSanityClient().fetch(`*[_type == "funtazia"]`);
 
-  return posts.map(({ slug, content, headline, image }) => {
-    return {
-      params: { slug: slug.current },
-      props: { content, headline, image },
-    };
-  });
-}
 
 const { slug } = Astro.params;
 const { headline, content, image } = Astro.props;
@@ -27,17 +19,19 @@ const { headline, content, image } = Astro.props;
 <Layout title="Welcome to Astro.">
   <Main>
     <section>
+      <div class="flex  flex-wrap width-screen justify-center ">
       {
         posts && (
-          <ul>
-            {posts.map((post) => (
-              <li>
-                <a href={`funtazia/`+post.slug.current}>{post.headline}</a>
-              </li>
-            ))}
-          </ul>
+         
+  
+            posts.map((post) => (
+          
+              <Card headline={post.headline} slug={post.slug.current}  image={post.image} content={post.content}/>          
+            ))  
+    
         )
       }
+          </div>
     </section>
   </Main>
 </Layout>

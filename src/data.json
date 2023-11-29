@@ -2,13 +2,13 @@
   {
     "id": 1,
     "name": "Gábor",
-    "story": "Lvl 28-as játékos a Föld nevű szerveren. Hobbiai a túlélés, programozás, elektornikus zene, videójátékok, overthinking. Elérhetőség: email: gab95or@gmail.com, instagram:gubey666 zene:https://koobor.bandcamp.com/album/trial-and-error",
+    "story": "",
     "image": "../assets/gabor2.jpg"
   },
   {
     "id": 2,
     "name": "Andrea",
-    "story": "Welcome to the React documentation! This page will give you an introduction to the 80% of React concepts that you will use on a daily basis. Welcome to the React documentation! This page will give you an introduction to the 80% of React concepts that you will use on a daily basis. ",
+    "story": "Lvl 28-as játékos a Föld nevű szerveren. Hobbiai a túlélés, programozás, elektornikus zene, videójátékok, overthinking. Elérhetőség: email: gab95or@gmail.com, instagram:gubey666 zene:https://koobor.bandcamp.com/album/trial-and-error",
     "image": "../assets/andrea.jpg"
   }
 ]
