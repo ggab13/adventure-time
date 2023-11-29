@@ -1,0 +1,20 @@
+---
+import {  urlForImage } from '../lib/api.js';
+import { Image } from 'astro:assets';
+const { image,headline,slug, content } = Astro.props;
+
+console.log(image )
+---
+
+<a href={`funtazia/`+ slug} class="group  hover:scale-105  transition-all">
+  <div class="flex-auto border-2 border-[#FFFFFF] rounded-lg bg-secondaryColor group-hover:bg-primaryColor p-5 pb-12 m-5 max-w-lg max-h-[800px]" >
+    <img class="" src={image ? urlForImage(image).width(500).height(300).format('webp') : ''}/>
+    <!--  <Image src={image ? urlForImage(image) : ''} alt="Picture of blog post"/> -->
+    <h2 class="p-2 text-xl text-amber group-hover:brightness-90 group-hover:text-[#FFFFFF]">{headline}</h2>
+    <p class="italic text-sm p-2 text-primaryColor group-hover:brightness-90 group-hover:text-amber">12/03/1995</p> 
+    <p class="line-clamp-4 p-1 group-hover:brightness-90 group-hover:text-secondaryColor">{content}</p>  
+   
+   </div>
+   
+</a>
+

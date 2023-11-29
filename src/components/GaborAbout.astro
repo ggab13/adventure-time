@@ -4,25 +4,38 @@ import { Image } from 'astro:assets';
 import gaborImage from '../assets/gabor2.jpg';
 import andreaImage from '../assets/andrea.jpg';
 
+import { Icon } from 'astro-icon'
 const { user } = Astro.props;
 ---
 
-<div class="flex">
-  <div class="p-20 m-20 bg-secondaryColor w-2/6">
-    <h1 class="text-primaryColor p-3 text-4xl">
+<div class="flex max-h-full justify-center pt-20 flex-wrap flex-col-reverse xl:flex-row xl:flex-nowrap">
+  <div class="p-3 m-4 bg-secondaryColor ">
+    <h2 class="text-amber p-3 text-4xl">
       {user.name}
-    </h1>
-    <p class="font-judson text-textColor text-2xl p-15 mx-5">
-      {user.story}
+    </h2>
+    <p class="font-judson text-textColor text-3xl p-1 pt-8 ">
+      Lvl 28-as játékos a Föld nevű szerveren.
+      <br><br> Hobbiai a túlélés, programozás, elektornikus zene készítés, videójátékok, overthinking.
     </p>
-    <a href="#" class="fa fa-facebook"></a>
-    <a href="#" class="fa fa-twitter"></a>
+   
 
-    <i class="fas fa-music"></i>
-    <i class="fa fa-bandcamp" aria-hidden="true"></i>
+    <div class="flex py-2 px-6 pt-20">
+      <Icon name="email-line" class="w-[40px] mr-6 text-primaryColor"/>
+      <a href="https://www.instagram.com/gubey666/">koborzaj@gmail.com</a>
+    </div>
+    <div class="flex py-2 px-6">
+      <Icon name="instagram" class="w-[40px] mr-6 text-primaryColor"/>
+      <a href="https://www.instagram.com/gubey666/">https://www.instagram.com/gubey666/</a>
+    </div>
+  <div class="flex py-2 px-6">
+    <Icon name="music" class="w-[40px] mr-6 text-primaryColor"/>
+    <a href="https://koobor.bandcamp.com/album/trial-and-error ">https://koobor.bandcamp.com/album/trial-and-error </a>
   </div>
-  <div class="p-12 bg-backgroundColor w-4/6">
-    <div class="w-[1100px] pt-20">
+
+   
+  </div>
+  <div class="p-3 bg-backgroundColor shrink">
+    <div class="">
       <Image
         src={user.name == 'Gábor' ? gaborImage : andreaImage}
         alt="gabor"

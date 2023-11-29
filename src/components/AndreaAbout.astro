@@ -4,12 +4,14 @@ import { Image } from 'astro:assets';
 import gaborImage from '../assets/gabor2.jpg';
 import andreaImage from '../assets/andrea.jpg';
 
+import { Icon } from 'astro-icon'
+
 const { user } = Astro.props;
 ---
 
-<div class="flex">
-  <div class="p-12 bg-backgroundColor w-4/6">
-    <div class="w-[1200px] pt-20">
+<div class="flex max-h-full justify-center pt-20 flex-wrap xl:flex-row xl:flex-nowrap">
+  <div class="p-3 bg-backgroundColor">
+    <div class=" p-3">
       <Image
         src={user.name == 'Gábor' ? gaborImage : andreaImage}
         alt="gabor"
@@ -17,12 +19,14 @@ const { user } = Astro.props;
       />
     </div>
   </div>
-  <div class="p-20 m-20 bg-secondaryColor w-2/6">
-    <h1 class="text-primaryColor p-2 text-4xl">
+  <div class="p-3 m-4 bg-secondaryColor ">
+    <h1 class="text-primaryColor p-3 text-4xl">
       {user.name}
     </h1>
-    <p class="font-judson text-textColor text-2xl p-15 m-30">
+    <p class="font-judson text-textColor text-2xl p-3 mx-5">
       {user.story}
-    </p>
+  
+    </p>  
+    <Icon name="instagram" />
   </div>
 </div>
