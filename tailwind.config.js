@@ -7,6 +7,9 @@ export default {
         judson: ['Judson', 'sans-serif'],
         archivo: ['Archivo Black', 'sans-serif'],
       },
+      borderRadius: {
+        extraLarge: '13rem',
+      },
     },
     colors: {
       backgroundColor: '#ECC4C9',
