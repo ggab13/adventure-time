@@ -75,10 +75,12 @@ const { headline, content, image, imagesGallery, imagesTest } = Astro.props;
           <>
             {console.log(obj)}
             <p>{obj.alt}</p>
-            <img
-              src={urlForImage(obj.image).format('jpg')}
-              class="w-[200px] h-auto"
-            />
+            <div class="w-44 h-20 image-container" style=`background-image: url(${urlForImage(obj.image).format('webp')}`>
+              <div>
+              </div>
+              <div>
+              </div>
+            </div>
           </>
         ))
       }
@@ -89,4 +91,10 @@ const { headline, content, image, imagesGallery, imagesTest } = Astro.props;
 <script>
   import fslightbox from 'fslightbox';
   fsLightbox.props.type = 'image';
+
+  const imageContainer = document.querySelector('.image-container')
+
+  imageContainer.addEventListener('mouseover', () => {
+    console.log('hover')
+  })
 </script>
