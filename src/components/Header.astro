@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import logo from '../assets/smileycycle.png';
 import beer from '../assets/beer.png';
 
-const blog = "./blog"
+const blog = './blog';
 ---
 
 <header>
@@ -12,7 +12,9 @@ const blog = "./blog"
   >
     <div class="flex content-center items-center gap-2">
       <Image src={logo} alt="image of logo" class="w-auto h-[50px]" />
-      <a href="../" class="text-primaryColor text-4xl"
+      <a
+        href="../"
+        class="text-primaryColor hover:scale-105 transition-all text-4xl"
         ><span class="text-amber">Fun</span>tázia</a
       >
     </div>
@@ -84,12 +86,7 @@ const blog = "./blog"
     class="hidden md:hidden w-full flex flex-col items-center bg-primaryColor transition-all duration-200"
     id="menu"
   >
-    <ul
-      class="text-base text-gray-700
-        pt-4
-        items-center
-        text-center"
-    >
+    <ul class="text-base text-gray-700 pt-4 items-center text-center">
       <li class="">
         <a class="md:p-4 py-1 block hover:text-amber" href="./">Home</a>
       </li>

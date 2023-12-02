@@ -7,17 +7,20 @@ import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
   const posts = await useSanityClient().fetch(`*[_type == "funtazia"]`);
-  console.log(posts);
-  return posts.map(({ slug, content, headline, image, imagesGallery }) => {
-    return {
-      params: { slug: slug.current },
-      props: { content, headline, image, imagesGallery },
-    };
-  });
+  /*   console.log(posts); */
+  return posts.map(
+    ({ slug, content, headline, image, imagesGallery, imagesTest }) => {
+      return {
+        params: { slug: slug.current },
+        props: { content, headline, image, imagesGallery, imagesTest },
+      };
+    }
+  );
 }
 
 const { slug } = Astro.params;
-const { headline, content, image, imagesGallery } = Astro.props;
+console.log(slug);
+const { headline, content, image, imagesGallery, imagesTest } = Astro.props;
 ---
 
 <Layout>
@@ -66,6 +69,20 @@ const { headline, content, image, imagesGallery } = Astro.props;
         }
       </div>
     </section>
+    <div class="bg-black flex justify-center">
+      {
+        imagesTest.map((obj) => (
+          <>
+            {console.log(obj)}
+            <p>{obj.alt}</p>
+            <img
+              src={urlForImage(obj.image).format('jpg')}
+              class="w-[200px] h-auto"
+            />
+          </>
+        ))
+      }
+    </div>
   </Main>
 </Layout>
 
