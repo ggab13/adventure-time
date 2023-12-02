@@ -8,30 +8,33 @@ import Card from '../components/Card.astro';
 import { getFirstBlogPost, urlForImage } from '../lib/api.js';
 const posts = await getFirstBlogPost();
 
-
-
-
 const { slug } = Astro.params;
-const { headline, content, image } = Astro.props;
+const { headline, content, image, author, publishedAt } = Astro.props;
+console.log(publishedAt + '   idopont');
 /* console.log('\n' + image + ' képgeci \n'); */
 ---
 
 <Layout title="Welcome to Astro.">
   <Main>
     <section>
-      <div class="flex  flex-wrap width-screen justify-center ">
-      {
-        posts && (
-         
-  
+      <div class="flex flex-wrap width-screen justify-center">
+        {
+          posts &&
             posts.map((post) => (
-          
-              <Card headline={post.headline} slug={post.slug.current}  image={post.image} content={post.content}/>          
-            ))  
-    
-        )
-      }
-          </div>
+              <>
+                <p>{new Date(post.publishedAt).toString()}</p>
+                <Card
+                  headline={post.headline}
+                  slug={post.slug.current}
+                  author={post.author}
+                  image={post.image}
+                  content={post.content}
+                  publishedAt={new Date(post.publishedAt)}
+                />
+              </>
+            ))
+        }
+      </div>
     </section>
   </Main>
 </Layout>
