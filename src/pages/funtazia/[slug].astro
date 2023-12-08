@@ -76,9 +76,8 @@ const { headline, content, image, imagesGallery, imagesTest } = Astro.props;
             {console.log(obj)}
             <p>{obj.alt}</p>
             <div class="w-44 h-20 image-container" style=`background-image: url(${urlForImage(obj.image).format('webp')}`>
-              <div>
-              </div>
-              <div>
+              <div class="hover w-full h-full bg-accentColor2">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione quae voluptatum, neque optio voluptate quaerat ullam repellendus molestias id cumque? Deleniti aut omnis eveniet, itaque suscipit quis? Asperiores, quisquam deserunt.
               </div>
             </div>
           </>
@@ -94,7 +93,20 @@ const { headline, content, image, imagesGallery, imagesTest } = Astro.props;
 
   const imageContainer = document.querySelector('.image-container')
 
-  imageContainer.addEventListener('mouseover', () => {
-    console.log('hover')
-  })
+  imageContainer.addEventListener('mouseover', hover)
+  imageContainer.addEventListener('mouseout', hover)
+
+  function hover() {
+    document.querySelector('.hover').classList.toggle('active')
+  }
 </script>
+
+<style>
+  .hover {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  .active {
+    opacity: 1;
+  }
+</style>
