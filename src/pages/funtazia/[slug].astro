@@ -124,10 +124,11 @@ const {
           <>
             {console.log(obj)}
             <p>{obj.alt}</p>
-            <img
-              src={urlForImage(obj.image).format('jpg')}
-              class="w-[200px] h-auto"
-            />
+            <div class="w-44 h-20 image-container" style=`background-image: url(${urlForImage(obj.image).format('webp')}`>
+              <div class="hover w-full h-full bg-accentColor2">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione quae voluptatum, neque optio voluptate quaerat ullam repellendus molestias id cumque? Deleniti aut omnis eveniet, itaque suscipit quis? Asperiores, quisquam deserunt.
+              </div>
+            </div>
           </>
         ))
       }
@@ -170,4 +171,23 @@ const {
 <script>
   import fslightbox from 'fslightbox';
   fsLightbox.props.type = 'image';
+
+  const imageContainer = document.querySelector('.image-container')
+
+  imageContainer.addEventListener('mouseover', hover)
+  imageContainer.addEventListener('mouseout', hover)
+
+  function hover() {
+    document.querySelector('.hover').classList.toggle('active')
+  }
 </script>
+
+<style>
+  .hover {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  .active {
+    opacity: 1;
+  }
+</style>
