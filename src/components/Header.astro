@@ -115,7 +115,7 @@ const blog = './blog';
     }
   });
   hamburger.addEventListener('focusout', () => {
-    menu.classList.add('hidden');
+    menu.classList.toggle('hidden');
     clicked++;
     if (clicked % 2 == 0) {
       hamburger.classList.toggle('group');

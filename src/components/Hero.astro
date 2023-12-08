@@ -1,7 +1,6 @@
 ---
-import { Image } from "astro:assets";
-import heroImage from '../assets/edro.jpg'
-
+import { Image } from 'astro:assets';
+import heroImage from '../assets/edro.jpg';
 ---
 
 <section class="w-full h-fit py-20">
@@ -9,19 +8,31 @@ import heroImage from '../assets/edro.jpg'
     class="max-w-7xl w-full h-full mx-auto flex flex-wrap-reverse gap-8 md:gap-0 px-1"
   >
     <div class="grow shrink basis-1 p-1 flex flex-col justify-center">
-      <h1 class="text-[calc(1.8rem+2vw)] text-accentColor2 leading-[1.1]" style="text-shadow: 1px 1px orange, 4px 4px black; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white; -webkit-text-fill-color: transparent">
+      <h1
+        class="text-[calc(1.8rem+2vw)] text-accentColor2 leading-[1.1]"
+        style="text-shadow: 1px 1px orange, 4px 4px black; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white; -webkit-text-fill-color: transparent"
+      >
         Welcome to our Funtázia blog
       </h1>
       <p class="p-3 font-judson text-2xl text-secondaryColor leading-7 my-4">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
         commodi, perspiciatis blanditiis at perferendis consectetur
       </p>
-     
-      <a class="font-judson text-3xl mx-auto mr-20 text-center bg-white hover:bg-gray-100 w-[200px]   bg-secondaryColor font-semibold py-2 px-4 border border-gray-400 rounded shadow text-primaryColor underline underline-offset-4 float-right hover:text-[#FFFFFF] hover:scale-105 transition-all" href="/blog">Our blog</a>
+
+      <a
+        class="font-judson text-2xl lg:text-3xl mx-auto mr-20 text-center bg-white hover:bg-gray-100 w-[200px] bg-secondaryColor font-semibold py-2 px-4 border border-gray-400 rounded shadow text-primaryColor underline underline-offset-4 float-right hover:text-[#FFFFFF] hover:scale-105 transition-all"
+        href="/blog">Our blog</a
+      >
     </div>
     <div class="grow shrink basis-1">
-      <div class="rounded-tr-extraLarge rounded-bl-extraLarge  w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] lg:w-[700px] lg:h-[700px] object-scale-down overflow-hidden mx-auto shadow-sm">
-        <Image class=" w-full h-full block object-cover translate-x-[-30%] scale-[2.0]" src={heroImage} alt="Hero Image"/>
+      <div
+        class="rounded-tr-extraLarge rounded-bl-extraLarge w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] lg:w-[700px] lg:h-[700px] object-scale-down overflow-hidden mx-auto shadow-sm"
+      >
+        <Image
+          class="w-full h-full block object-cover translate-x-[-30%] scale-[2.0]"
+          src={heroImage}
+          alt="Hero Image"
+        />
       </div>
     </div>
   </div>

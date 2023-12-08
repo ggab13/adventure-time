@@ -3,8 +3,6 @@ import { urlForImage } from '../lib/api.js';
 import { Image } from 'astro:assets';
 const { image, headline, slug, content, author, publishedAt } = Astro.props;
 
-console.log(publishedAt + ' geci data');
-
 const date = new Date(publishedAt);
 //console.log(date + 'DATU GECVI ');
 ---
@@ -30,10 +28,18 @@ const date = new Date(publishedAt);
       <p
         class="italic text-sm p-2 text-primaryColor group-hover:brightness-90 group-hover:text-amber"
       >
-        {publishedAt.toString()} - <span>{author}</span>
+        {
+          publishedAt.getUTCFullYear() +
+            '-' +
+            publishedAt.getUTCMonth() +
+            '-' +
+            publishedAt.getUTCDate()
+        }
+        <span class="text-textColor"> |</span>
+        <span>{author}</span>
       </p>
       <p
-        class="line-clamp-1 p-1 group-hover:brightness-90 group-hover:text-secondaryColor"
+        class="line-clamp-1 p-1 group-hover:brightness-90 group-hover:text-secondaryColor font-judson"
       >
         {content}
       </p>

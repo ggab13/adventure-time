@@ -10,11 +10,11 @@ const posts = await getFirstBlogPost();
 
 const { slug } = Astro.params;
 const { headline, content, image, author, publishedAt } = Astro.props;
-console.log(publishedAt + '   idopont');
+
 /* console.log('\n' + image + ' képgeci \n'); */
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Funtázia blog">
   <Main>
     <section>
       <div class="flex flex-wrap width-screen justify-center">
@@ -22,7 +22,6 @@ console.log(publishedAt + '   idopont');
           posts &&
             posts.map((post) => (
               <>
-                <p>{new Date(post.publishedAt).toString()}</p>
                 <Card
                   headline={post.headline}
                   slug={post.slug.current}

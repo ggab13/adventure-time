@@ -4,23 +4,47 @@ import { Image } from 'astro:assets';
 import { getFirstBlogPost, urlForImage } from '../../lib/api.js';
 import Main from '../../components/MainBlog.astro';
 import Layout from '../../layouts/Layout.astro';
-
+getStaticPaths;
 export async function getStaticPaths() {
   const posts = await useSanityClient().fetch(`*[_type == "funtazia"]`);
   /*   console.log(posts); */
   return posts.map(
-    ({ slug, content, headline, image, imagesGallery, imagesTest }) => {
+    ({
+      slug,
+      content,
+      headline,
+      image,
+      imagesGallery,
+      imagesTest,
+      publishedAt,
+      content2,
+    }) => {
       return {
         params: { slug: slug.current },
-        props: { content, headline, image, imagesGallery, imagesTest },
+        props: {
+          content,
+          headline,
+          image,
+          imagesGallery,
+          imagesTest,
+          publishedAt,
+          content2,
+        },
       };
     }
   );
 }
 
 const { slug } = Astro.params;
-console.log(slug);
-const { headline, content, image, imagesGallery, imagesTest } = Astro.props;
+const {
+  headline,
+  content,
+  image,
+  imagesGallery,
+  imagesTest,
+  publishedAt,
+  content2,
+} = Astro.props;
 ---
 
 <Layout>
@@ -34,31 +58,34 @@ const { headline, content, image, imagesGallery, imagesTest } = Astro.props;
       class="w-screen"
       src={image ? urlForImage(image).format('webp') : ''}
     />
-    <section class="w-full relative bottom-[300px]">
+    <section class="w-full relative">
       <div
-        class="absolute grid max-w-screen w-10/12 lg:w-6/12 left-1/2 transform -translate-x-1/2 top-[-100px] md:top-[-200px] lg:top-[-300px] xl:top-[-450px]"
+        class="relative max-w-screen w-10/12 lg:w-6/12 left-1/2 transform -translate-x-1/2 mt-[-150px] lg:mt-[-450px] shadow-2xl"
       >
-        <div class="bg-secondaryColor z-index-2 transition-all">
-          <h1 class="text-amber text-4xl p-8">{headline}</h1>
-          <p>Gábor - <span>2024-05-13</span></p>
-          <p class="px-12 mb-12 text-xl font-judson">{content}</p>
+        <!-- top-[-100px] md:top-[-200px] lg:top-[-300px] xl:top-[-450px] -->
+        <div class="bg-secondaryColor z-index-2 transition-all p-3">
+          <h1 class="text-amber text-3xl p-4">{headline}</h1>
+          <p class="p-2 m-4">Gábor - <span>{publishedAt}</span></p>
+          <p class="p-2 m-3 text-xl font-judson">
+            {content}
+          </p>
         </div>
       </div>
       <div></div>
     </section>
-    <section class="p-1 m-20 border-4 border-white top-16 bg-primaryColor">
-      <h2 class="text-6xl p-5 text-secondaryColor text-center">Galéria</h2>
+    <section class="p-1 m-3 bg-backgroundColor">
+      <h2 class="text-4xl p-5 text-secondaryColor text-center">Galéria</h2>
       <div id="gallery" class="flex p-5">
         {
           imagesGallery.map((kep) => (
             <>
-              <div class="">
+              <div class="hover:scale-105 transition-all ">
                 <a
                   href={urlForImage(kep).format('jpg')}
                   data-fslightbox="gallery"
                 >
                   <img
-                    class="h-[300px] w-auto p-5"
+                    class="h-[300px] w-auto m-6 hover:border-2 rounded-md hover:border-amber"
                     src={urlForImage(kep).format('jpg')}
                     alt="Image"
                   />
@@ -68,8 +95,30 @@ const { headline, content, image, imagesGallery, imagesTest } = Astro.props;
           ))
         }
       </div>
+      <div id="gallery" class="flex p-5">
+        {
+          imagesTest.map((obj) => (
+            <>
+              <div class="hover:scale-105 rounded-md transition-all  m-3 bg-secondaryColor hover:border-amber hover:border-2 ">
+                <a
+                  href={urlForImage(obj.image).format('jpg')}
+                  data-fslightbox="gallery"
+                  class=""
+                >
+                  <img
+                    class="h-[300px] w-auto rounded-md "
+                    src={urlForImage(obj.image).format('jpg')}
+                    alt="Image"
+                  />
+                </a>
+                <p class="italic text-center text-amber">{obj.alt}</p>
+              </div>
+            </>
+          ))
+        }
+      </div>
     </section>
-    <div class="bg-black flex justify-center">
+    <!--   <div class="bg-black flex justify-center">
       {
         imagesTest.map((obj) => (
           <>
@@ -79,6 +128,38 @@ const { headline, content, image, imagesGallery, imagesTest } = Astro.props;
               src={urlForImage(obj.image).format('jpg')}
               class="w-[200px] h-auto"
             />
+          </>
+        ))
+      }
+    </div> -->
+    <div class="bg-secondaryColor justify-center">
+      {
+        content2.map((obj) => (
+          <>
+            <div class="text-center">
+              <h2 class="text-amber p-5 text-3xl">{obj.subhead}</h2>
+              <p class="text-accentColor p-3 text-2xl">{obj.content}</p>
+              {obj.imagesTest.map((kep) => (
+                <>
+                  {console.log(kep)}
+                  <div class="flex bg-primaryColor border-4 border-primaryColor">
+                    <p>{kep.alt}</p>
+                    <div class="">
+                      <a
+                        href={urlForImage(kep.image).format('jpg')}
+                        data-fslightbox="gallery"
+                      >
+                        <img
+                          class="h-[300px] w-auto p-5"
+                          src={urlForImage(kep.image).format('jpg')}
+                          alt="Image"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </>
+              ))}
+            </div>
           </>
         ))
       }
