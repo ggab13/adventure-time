@@ -4,7 +4,7 @@ import sanity from 'astro-sanity';
 
 export default defineConfig({
   site: 'https://ggab13.github.io/',
-  base: '/adventure-time/index',
+  base: '/',
   integrations: [
     sanity({
       projectId: 'ypaaup99',
