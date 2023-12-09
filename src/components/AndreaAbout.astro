@@ -10,7 +10,7 @@ const { user } = Astro.props;
 ---
 
 <div
-  class="flex max-h-full justify-center pt-5 flex-wrap xl:flex-row xl:flex-nowrap"
+  class="flex max-h-full justify-center items-center pt-5 flex-wrap xl:flex-row xl:flex-nowrap"
 >
   <div class="p-3 bg-backgroundColor">
     <div class="p-3">
@@ -21,12 +21,47 @@ const { user } = Astro.props;
       />
     </div>
   </div>
-  <div class="p-3 m-4 bg-secondaryColor">
-    <h1 class="text-primaryColor p-3 text-4xl">
+  <div class="p-6 m-4 bg-secondaryColor">
+    <!-- <h2 class="text-amber text-4xl">
       {user.name}
-    </h1>
-    <p class="font-judson text-textColor text-2xl p-3 mx-5">
-      {user.story}
+    </h2> -->
+    <h2
+      class="text-2xl p-5 text-center text-[calc(2rem+0.8vw)] text-accentColor2 leading-[1.1]"
+      style="text-shadow: 1px 1px orange, 4px 4px black; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white; -webkit-text-fill-color: transparent"
+    >
+      {user.name}
+    </h2>
+    <p class="font-judson text-textColor text-3xl p-2 pt-4">
+      Egy természetet kedvelő és tisztelő macskás lány.
+      <br /><br />
+      Szeretném megtapasztalni milyen kilépni a mókuskerékből és a belső iránytűmre
+      hallgatni, ezért felmondtam a munkahelyemen, hogy kipróbálhassam milyen szabadon
+      utazgatni.
     </p>
+
+    <div class="py-10">
+      <div class="flex p-3 items-center self-center">
+        <div class="w-[50px]">
+          <Icon
+            name="email-line"
+            class="w-[40px] h-[40px] p-1 text-primaryColor"
+          />
+        </div>
+        <a href="https://www.instagram.com/gubey666/" class="mx-3 text-center"
+          >magyarimandi@gmail.com</a
+        >
+      </div>
+      <div class="flex p-3 items-center self-center">
+        <div class="w-[50px]">
+          <Icon
+            name="instagram"
+            class="w-[40px] h-[40px] p-1 text-primaryColor"
+          />
+        </div>
+        <a href="https://www.instagram.com/m_mandika/ " class="mx-3"
+          >https://www.instagram.com/m_mandika/</a
+        >
+      </div>
+    </div>
   </div>
 </div>

@@ -27,11 +27,15 @@ const blog = './blog';
       <button
         onclick="location.href='https://www.buymeacoffee.com/koborzaj'"
         type="button"
-        class="text-amber bg-primaryColor hidden md:inline hover:bg-accentColor hover:text-textColor focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
+        class="text-amber group bg-primaryColor hidden md:inline hover:bg-accentColor hover:text-textColor focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
       >
         <div class="flex">
+          <Image
+            src={beer}
+            class="w-auto h-[20px] mr-1 group-hover:-rotate-[30deg]"
+            alt="picture of beer"
+          />
           Buy us a Beer &nbsp;
-          <Image src={beer} class="w-auto h-[20px]" alt="picture of beer" />
         </div>
       </button>
       <!--  <div class="md:hidden space-y-3 cursor-pointer" id="hamburger2">
@@ -43,7 +47,6 @@ const blog = './blog';
           <span class="block h-0.5 w-8 animate-pulse bg-primaryColor"></span>
         </div>
       </div> -->
-
       <div>
         <button
           class="md:hidden relative group space-y-3 cursor-pointer"

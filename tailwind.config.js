@@ -11,6 +11,9 @@ export default {
         extraLarge: '13rem',
       },
     },
+    rotate: {
+      30: '30deg',
+    },
     colors: {
       backgroundColor: '#ECC4C9',
       primaryColor: '#D1788F',

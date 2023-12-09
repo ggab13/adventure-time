@@ -9,33 +9,62 @@ const { user } = Astro.props;
 ---
 
 <div
-  class="flex max-h-full justify-center pt-5 flex-wrap flex-col-reverse xl:flex-row xl:flex-nowrap"
+  class="flex max-h-full justify-center items-center pt-5 flex-wrap flex-col-reverse xl:flex-row xl:flex-nowrap"
 >
-  <div class="p-3 m-4 bg-secondaryColor">
-    <h2 class="text-amber p-3 text-4xl">
+  <div class="p-6 m-4 bg-secondaryColor">
+    <h2
+      class="text-2xl p-5 text-center text-[calc(2rem+0.8vw)] text-accentColor2 leading-[1.1]"
+      style="text-shadow: 1px 1px orange, 4px 4px black; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white; -webkit-text-fill-color: transparent"
+    >
       {user.name}
     </h2>
-    <p class="font-judson text-textColor text-3xl p-1 pt-8">
+    <p class="font-judson text-textColor text-3xl p-2 pt-4">
       Lvl 28-as játékos a Föld nevű szerveren.
       <br /><br /> Hobbiai a túlélés, programozás, elektornikus zene készítés, videójátékok,
       overthinking.
     </p>
 
-    <div class="flex py-2 px-6 pt-20">
-      <Icon name="email-line" class="w-[40px] mr-6 text-primaryColor" />
-      <a href="https://www.instagram.com/gubey666/">koborzaj@gmail.com</a>
-    </div>
-    <div class="flex py-2 px-6">
-      <Icon name="instagram" class="w-[40px] mr-6 text-primaryColor" />
-      <a href="https://www.instagram.com/gubey666/"
-        >https://www.instagram.com/gubey666/</a
-      >
-    </div>
-    <div class="flex py-2 px-6">
-      <Icon name="music" class="w-[40px] mr-6 text-primaryColor" />
-      <a href="https://koobor.bandcamp.com/album/trial-and-error "
-        >https://koobor.bandcamp.com/album/trial-and-error
-      </a>
+    <div class="py-10">
+      <div class="flex p-3 items-center self-center">
+        <div class="w-[50px]">
+          <Icon
+            name="email-line"
+            class="w-[40px] h-[40px] p-1 text-primaryColor"
+          />
+        </div>
+        <a href="https://www.instagram.com/gubey666/" class="mx-3 text-center"
+          >koborzaj@gmail.com</a
+        >
+      </div>
+      <div class="flex p-3 items-center self-center">
+        <div class="w-[50px]">
+          <Icon
+            name="instagram"
+            class="w-[40px] h-[40px] p-1 text-primaryColor"
+          />
+        </div>
+        <a href="https://www.instagram.com/gubey666/ " class="mx-3"
+          >https://www.instagram.com/gubey666/</a
+        >
+      </div>
+      <div class="flex p-3 items-center self-center">
+        <div class="w-[50px]">
+          <Icon name="music" class="w-[40px] h-[40px] p-1 text-primaryColor" />
+        </div>
+        <a
+          href="https://koobor.bandcamp.com/album/trial-and-error "
+          class="mx-3"
+          >https://koobor.bandcamp.com/album/trial-and-error
+        </a>
+      </div>
+      <div class="flex p-3 items-center self-center">
+        <div class="w-[50px]">
+          <Icon name="github" class="w-[40px] h-[40px] p-1 text-primaryColor" />
+        </div>
+        <a href="https://github.com/ggab13" class="mx-3"
+          >https://github.com/ggab13</a
+        >
+      </div>
     </div>
   </div>
   <div class="p-3 bg-backgroundColor shrink">

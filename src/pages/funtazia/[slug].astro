@@ -17,6 +17,7 @@ export async function getStaticPaths() {
       imagesGallery,
       imagesTest,
       publishedAt,
+      author,
       content2,
     }) => {
       return {
@@ -28,6 +29,7 @@ export async function getStaticPaths() {
           imagesGallery,
           imagesTest,
           publishedAt,
+          author,
           content2,
         },
       };
@@ -43,8 +45,11 @@ const {
   imagesGallery,
   imagesTest,
   publishedAt,
+  author,
   content2,
 } = Astro.props;
+
+const date = new Date(publishedAt);
 ---
 
 <Layout>
@@ -54,28 +59,93 @@ const {
         <img src="https://i.imgur.com/fsyrScY.jpg" alt="Image" />
       </a>
     </div> -->
-    <img
-      class="w-screen"
-      src={image ? urlForImage(image).format('webp') : ''}
-    />
+    <div class="w-screen bg-secondaryColor">
+      <img
+        class="w-screen opacity-75 brightness-50"
+        src={image ? urlForImage(image).format('webp') : ''}
+      />
+    </div>
     <section class="w-full relative">
       <div
-        class="relative max-w-screen w-10/12 lg:w-6/12 left-1/2 transform -translate-x-1/2 mt-[-150px] lg:mt-[-450px] shadow-2xl"
+        class="relative max-w-screen w-10/12 lg:w-6/12 left-1/2 transform -translate-x-1/2 mt-[-150px] lg:mt-[-500px] shadow-2xl"
       >
         <!-- top-[-100px] md:top-[-200px] lg:top-[-300px] xl:top-[-450px] -->
-        <div class="bg-secondaryColor z-index-2 transition-all p-3">
-          <h1 class="text-amber text-3xl p-4">{headline}</h1>
-          <p class="p-2 m-4">Gábor - <span>{publishedAt}</span></p>
-          <p class="p-2 m-3 text-xl font-judson">
-            {content}
+        <div
+          class="bg-secondaryColor border-4 border-black rounded-xl z-index-2 transition-all p-3"
+        >
+          <h1
+            class="p-2 text-center text-[calc(1.5rem+1.8vw)] text-accentColor2 leading-[1.1]"
+            style="text-shadow: 1px 1px orange, 4px 4px black; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white; -webkit-text-fill-color: transparent"
+          >
+            {headline}
+          </h1>
+          <!-- <h1 class="text-amber text-center text-4xl p-4">{headline}</h1> -->
+          <p class="p-2 m-2 text-primaryColor text-center">
+            <span
+              >{
+                date.getUTCFullYear() +
+                  '.' +
+                  date.getUTCMonth() +
+                  '.' +
+                  date.getUTCDate() +
+                  '. - ' +
+                  date.getUTCHours() +
+                  ':' +
+                  date.getUTCMinutes()
+              }</span
+            >
+            <span class="text-amber text-2xl">|</span>
+            {author}
           </p>
+          <!--   <p class="p-2 m-3 text-xl font-judson">
+            {content}
+          </p> -->
+
+          <section class="bg-secondaryColor justify-center">
+            {
+              content2.map((obj) => (
+                <>
+                  <div class="">
+                    <h2 class="text-amber text-3xl p-2">{obj.subhead}</h2>
+                    <p class="p-4 m-2 text-xl font-judson">{obj.content}</p>
+                    <div class="flex flex-wrap justify-center">
+                      {obj.imagesTest.map((obj) => (
+                        <>
+                          <div class="items-center relative group   rounded-md   m-3  hover:border-amber hover:border-2 ">
+                            <a class="absolute inset-0 z-10 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 duration-500">
+                              <h1 class=" text-amber text-xl">{obj.alt}</h1>
+                            </a>
+                            <a
+                              href={urlForImage(obj.image).format('jpg')}
+                              data-fslightbox="gallery"
+                              class=""
+                            >
+                              <img
+                                class="h-[300px] w-auto rounded-md group-hover:opacity-10"
+                                src={urlForImage(obj.image).format('jpg')}
+                                alt="Image"
+                              />
+                            </a>
+                          </div>
+                        </>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              ))
+            }
+          </section>
         </div>
       </div>
-      <div></div>
     </section>
     <section class="p-1 m-3 bg-backgroundColor">
-      <h2 class="text-4xl p-5 text-secondaryColor text-center">Galéria</h2>
-      <div id="gallery" class="flex p-5">
+      <h1
+        class="text-6xl p-5 text-center text-[calc(1.8rem+2vw)] text-accentColor2 leading-[1.1]"
+        style="text-shadow: 1px 1px orange, 4px 4px black; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white; -webkit-text-fill-color: transparent"
+      >
+        Galéria
+      </h1>
+      <div id="gallery" class="flex flex-wrap justify-center p-5">
         {
           imagesGallery.map((kep) => (
             <>
@@ -95,76 +165,7 @@ const {
           ))
         }
       </div>
-      <div id="gallery" class="flex p-5">
-        {
-          imagesTest.map((obj) => (
-            <>
-              <div class="hover:scale-105 rounded-md transition-all  m-3 bg-secondaryColor hover:border-amber hover:border-2 ">
-                <a
-                  href={urlForImage(obj.image).format('jpg')}
-                  data-fslightbox="gallery"
-                  class=""
-                >
-                  <img
-                    class="h-[300px] w-auto rounded-md "
-                    src={urlForImage(obj.image).format('jpg')}
-                    alt="Image"
-                  />
-                </a>
-                <p class="italic text-center text-amber">{obj.alt}</p>
-              </div>
-            </>
-          ))
-        }
-      </div>
     </section>
-    <!--   <div class="bg-black flex justify-center">
-      {
-        imagesTest.map((obj) => (
-          <>
-            {console.log(obj)}
-            <p>{obj.alt}</p>
-            <div class="w-44 h-20 image-container" style=`background-image: url(${urlForImage(obj.image).format('webp')}`>
-              <div class="hover w-full h-full bg-accentColor2">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione quae voluptatum, neque optio voluptate quaerat ullam repellendus molestias id cumque? Deleniti aut omnis eveniet, itaque suscipit quis? Asperiores, quisquam deserunt.
-              </div>
-            </div>
-          </>
-        ))
-      }
-    </div> -->
-    <div class="bg-secondaryColor justify-center">
-      {
-        content2.map((obj) => (
-          <>
-            <div class="text-center">
-              <h2 class="text-amber p-5 text-3xl">{obj.subhead}</h2>
-              <p class="text-accentColor p-3 text-2xl">{obj.content}</p>
-              {obj.imagesTest.map((kep) => (
-                <>
-                  {console.log(kep)}
-                  <div class="flex bg-primaryColor border-4 border-primaryColor">
-                    <p>{kep.alt}</p>
-                    <div class="">
-                      <a
-                        href={urlForImage(kep.image).format('jpg')}
-                        data-fslightbox="gallery"
-                      >
-                        <img
-                          class="h-[300px] w-auto p-5"
-                          src={urlForImage(kep.image).format('jpg')}
-                          alt="Image"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </>
-              ))}
-            </div>
-          </>
-        ))
-      }
-    </div>
   </Main>
 </Layout>
 
@@ -172,13 +173,13 @@ const {
   import fslightbox from 'fslightbox';
   fsLightbox.props.type = 'image';
 
-  const imageContainer = document.querySelector('.image-container')
+  const imageContainer = document.querySelector('.image-container');
 
-  imageContainer.addEventListener('mouseover', hover)
-  imageContainer.addEventListener('mouseout', hover)
+  imageContainer.addEventListener('mouseover', hover);
+  imageContainer.addEventListener('mouseout', hover);
 
   function hover() {
-    document.querySelector('.hover').classList.toggle('active')
+    document.querySelector('.hover').classList.toggle('active');
   }
 </script>
 
