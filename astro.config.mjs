@@ -3,7 +3,7 @@ import tailwindIntegration from '@astrojs/tailwind';
 import sanity from 'astro-sanity';
 
 export default defineConfig({
-  site: 'https://adventure-time.github.io/',
+  site: 'https://ggab13.github.io/',
   base: '/adventure-time',
   integrations: [
     sanity({
