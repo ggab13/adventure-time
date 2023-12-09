@@ -20,8 +20,14 @@ const blog = './blog';
     </div>
     <div class="flex content-center items-center">
       <ul class="hidden md:flex p-3 gap-3">
-        <li><a href="../about" class="hover:text-primaryColor">About</a></li>
-        <li><a href="../blog" class="hover:text-primaryColor">Blog</a></li>
+        <li>
+          <a href="/adventure-time/about" class="hover:text-primaryColor"
+            >About</a>
+        </li>
+        <li>
+          <a href="/adventure-time/blog" class="hover:text-primaryColor"
+            >Blog</a>
+        </li>
       </ul>
 
       <button
@@ -91,14 +97,21 @@ const blog = './blog';
   >
     <ul class="text-base text-gray-700 pt-4 items-center text-center">
       <li class="">
-        <a class="md:p-4 py-1 block hover:text-amber" href="./">Home</a>
-      </li>
-      <li class="">
-        <a class="md:p-4 py-2 block hover:text-amber" href="./about">About us</a
+        <a class="md:p-4 py-1 block hover:text-amber" href="/adventure-time/"
+          >Home</a
         >
       </li>
       <li class="">
-        <a class="md:p-4 py-2 block hover:text-amber" href="./blog">Blog</a>
+        <a
+          class="md:p-4 py-2 block hover:text-amber"
+          href="/adventure-time/about">About us</a
+        >
+      </li>
+      <li class="">
+        <a
+          class="md:p-4 py-2 block hover:text-amber"
+          href="/adventure-time/blog">Blog</a
+        >
       </li>
     </ul>
   </div>
@@ -118,11 +131,8 @@ const blog = './blog';
     }
   });
   hamburger.addEventListener('focusout', () => {
-    menu.classList.toggle('hidden');
-    clicked++;
-    if (clicked % 2 == 0) {
-      hamburger.classList.toggle('group');
-      clicked = 1;
-    }
+    setTimeout(() => {
+      menu.classList.toggle('hidden');
+    }, 100);
   });
 </script>
