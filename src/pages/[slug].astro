@@ -1,9 +1,9 @@
 ---
 import { useSanityClient } from 'astro-sanity';
 import { Image } from 'astro:assets';
-import { getFirstBlogPost, urlForImage } from '../../lib/api.js';
-import Main from '../../components/MainBlog.astro';
-import Layout from '../../layouts/Layout.astro';
+import { getFirstBlogPost, urlForImage } from '../lib/api';
+import Main from '../components/MainBlog.astro';
+import Layout from '../layouts/Layout.astro';
 getStaticPaths;
 export async function getStaticPaths() {
   const posts = await useSanityClient().fetch(`*[_type == "funtazia"]`);
