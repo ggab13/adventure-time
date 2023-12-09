@@ -4,7 +4,6 @@ import sanity from 'astro-sanity';
 
 export default defineConfig({
   site: 'https://adventure-timeél.github.io/',
-  base: '/my-repo',
   integrations: [
     sanity({
       projectId: 'ypaaup99',
