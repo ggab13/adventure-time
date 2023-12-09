@@ -7,45 +7,47 @@ const date = new Date(publishedAt);
 console.log(JSON.stringify(slug) + 'DATU GECVI ');
 ---
 
-<a
-  href={`/adventure-time/` + slug.current}
-  class="group hover:scale-105 transition-all"
->
-  <div
-    class="flex-auto items-stretch border-2 border-[#FFFFFF] rounded-lg bg-secondaryColor group-hover:bg-primaryColor p-5 pb-12 m-5 max-w-lg max-h-[800px]"
+<section>
+  <a
+    href={`/adventure-time/` + slug.current}
+    class="group hover:scale-105 transition-all"
   >
-    <div class="flex-1 h-full w-[300px]">
-      <h2
-        class="p-2 text-xl text-amber group-hover:brightness-90 group-hover:text-[#FFFFFF]"
-      >
-        {headline}
-      </h2>
-      <img
-        class=""
-        src={image
-          ? urlForImage(image).width(400).height(400).format('webp')
-          : ''}
-      />
-      <!--  <Image src={image ? urlForImage(image) : ''} alt="Picture of blog post"/> -->
+    <div
+      class="flex-auto items-stretch border-2 border-[#FFFFFF] rounded-lg bg-secondaryColor group-hover:bg-primaryColor p-5 pb-12 m-5 max-w-lg max-h-[800px]"
+    >
+      <div class="flex-1 h-full w-[300px]">
+        <h2
+          class="p-2 text-xl text-amber group-hover:brightness-90 group-hover:text-[#FFFFFF]"
+        >
+          {headline}
+        </h2>
+        <img
+          class=""
+          src={image
+            ? urlForImage(image).width(400).height(400).format('webp')
+            : ''}
+        />
+        <!--  <Image src={image ? urlForImage(image) : ''} alt="Picture of blog post"/> -->
 
-      <p
-        class="p-2 text-primaryColor group-hover:brightness-90 group-hover:text-amber"
-      >
-        {
-          publishedAt.getUTCFullYear() +
-            '-' +
-            publishedAt.getUTCMonth() +
-            '-' +
-            publishedAt.getUTCDate()
-        }
-        <span class="text-amber text-lg"> |</span>
-        <span>{author}</span>
-      </p>
-      <p
-        class="line-clamp-1 text-lg p-1 group-hover:brightness-90 group-hover:text-secondaryColor font-judson"
-      >
-        {content}
-      </p>
+        <p
+          class="p-2 text-primaryColor group-hover:brightness-90 group-hover:text-amber"
+        >
+          {
+            publishedAt.getUTCFullYear() +
+              '-' +
+              publishedAt.getUTCMonth() +
+              '-' +
+              publishedAt.getUTCDate()
+          }
+          <span class="text-amber text-lg"> |</span>
+          <span>{author}</span>
+        </p>
+        <p
+          class="line-clamp-1 text-lg p-1 group-hover:brightness-90 group-hover:text-secondaryColor font-judson"
+        >
+          {content}
+        </p>
+      </div>
     </div>
-  </div>
-</a>
+  </a>
+</section>
