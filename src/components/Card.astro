@@ -4,10 +4,13 @@ import { Image } from 'astro:assets';
 const { image, headline, slug, content, author, publishedAt } = Astro.props;
 
 const date = new Date(publishedAt);
-//console.log(date + 'DATU GECVI ');
+console.log(JSON.stringify(slug) + 'DATU GECVI ');
 ---
 
-<a href={`./` + slug} class="group hover:scale-105 transition-all">
+<a
+  href={`/adventure-time/` + slug.current}
+  class="group hover:scale-105 transition-all"
+>
   <div
     class="flex-auto items-stretch border-2 border-[#FFFFFF] rounded-lg bg-secondaryColor group-hover:bg-primaryColor p-5 pb-12 m-5 max-w-lg max-h-[800px]"
   >

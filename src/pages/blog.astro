@@ -24,7 +24,7 @@ const { headline, content, image, author, publishedAt } = Astro.props;
               <>
                 <Card
                   headline={post.headline}
-                  slug={post.slug.current}
+                  slug={post.slug}
                   author={post.author}
                   image={post.image}
                   content={post.content}
