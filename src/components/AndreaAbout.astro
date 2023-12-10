@@ -21,7 +21,7 @@ const { user } = Astro.props;
       />
     </div>
   </div>
-  <div class="p-3 m-2 w-fit bg-secondaryColor">
+  <div class="p-3 m-2 w-fit rounded-3xl bg-secondaryColor">
     <!-- <h2 class="text-amber text-4xl">
       {user.name}
     </h2> -->
@@ -40,7 +40,7 @@ const { user } = Astro.props;
     </p>
 
     <div class="py-10 text-sm lg:text-lg">
-      <div class="flex p-3 items-center self-center">
+      <div class="flex flex-col lg:flex-row p-3 items-center self-center">
         <div class="w-[50px]">
           <Icon
             name="email-line"
@@ -51,7 +51,7 @@ const { user } = Astro.props;
           >magyarimandi@gmail.com</a
         >
       </div>
-      <div class="flex p-3 items-center self-center">
+      <div class="flex flex-col lg:flex-row p-3 items-center self-center">
         <div class="w-[50px]">
           <Icon
             name="instagram"

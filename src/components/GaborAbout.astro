@@ -11,7 +11,7 @@ const { user } = Astro.props;
 <div
   class="flex max-h-full justify-center items-center flex-wrap flex-col-reverse xl:flex-row xl:flex-nowrap"
 >
-  <div class="p-3 m-6 w-fit bg-secondaryColor">
+  <div class="p-3 m-3 w-fit bg-secondaryColor rounded-3xl">
     <h2
       class="p-5 text-center text-[calc(1.5rem+1vw)] text-accentColor2 leading-[1.1]"
       style="text-shadow: 1px 1px orange, 4px 4px black; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white; -webkit-text-fill-color: transparent"
@@ -24,8 +24,8 @@ const { user } = Astro.props;
       overthinking.
     </p>
 
-    <div class="py-10 text-sm lg:text-lg">
-      <div class="flex p-3 items-center self-center">
+    <div class="text-sm lg:text-lg">
+      <div class="flex flex-col lg:flex-row p-3 items-center self-center">
         <div class="w-[50px]">
           <Icon
             name="email-line"
@@ -36,7 +36,7 @@ const { user } = Astro.props;
           >koborzaj@gmail.com</a
         >
       </div>
-      <div class="flex p-3 items-center self-center">
+      <div class="flex flex-col lg:flex-row p-3 items-center self-center">
         <div class="w-[50px]">
           <Icon
             name="instagram"
@@ -47,7 +47,7 @@ const { user } = Astro.props;
           >https://www.instagram.com/gubey666/</a
         >
       </div>
-      <div class="flex p-3 items-center self-center">
+      <div class="flex flex-col lg:flex-row p-3 items-center self-center">
         <div class="w-[50px]">
           <Icon name="music" class="w-[40px] h-[40px] p-1 text-primaryColor" />
         </div>
@@ -57,7 +57,7 @@ const { user } = Astro.props;
           >https://koobor.bandcamp.com/album/trial-and-error
         </a>
       </div>
-      <div class="flex p-3 items-center self-center">
+      <div class="flex flex-col lg:flex-row p-3 items-center self-center">
         <div class="w-[50px]">
           <Icon name="github" class="w-[40px] h-[40px] p-1 text-primaryColor" />
         </div>
