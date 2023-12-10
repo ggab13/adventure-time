@@ -21,17 +21,17 @@ const { user } = Astro.props;
       />
     </div>
   </div>
-  <div class="p-6 m-4 bg-secondaryColor">
+  <div class="p-3 m-2 bg-secondaryColor">
     <!-- <h2 class="text-amber text-4xl">
       {user.name}
     </h2> -->
     <h2
-      class="text-2xl p-5 text-center text-[calc(2rem+0.8vw)] text-accentColor2 leading-[1.1]"
+      class="p-5 text-center text-[calc(1.5rem+1vw)] text-accentColor2 leading-[1.1]"
       style="text-shadow: 1px 1px orange, 4px 4px black; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white; -webkit-text-fill-color: transparent"
     >
       {user.name}
     </h2>
-    <p class="font-judson text-textColor text-3xl p-2 pt-4">
+    <p class="font-judson text-textColor text-lg lg:text-2xl p-2 pt-4">
       Egy természetet kedvelő és tisztelő macskás lány.
       <br /><br />
       Szeretném megtapasztalni milyen kilépni a mókuskerékből és a belső iránytűmre
@@ -39,7 +39,7 @@ const { user } = Astro.props;
       utazgatni.
     </p>
 
-    <div class="py-10">
+    <div class="py-10 text-sm lg:text-lg">
       <div class="flex p-3 items-center self-center">
         <div class="w-[50px]">
           <Icon
