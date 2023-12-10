@@ -11,6 +11,11 @@ const posts = await getFirstBlogPost();
 const { slug } = Astro.params;
 const { headline, content, image, author, publishedAt } = Astro.props;
 
+const sortedArray = posts.sort(
+  (objA, objB) =>
+    Number(new Date(objA.publishedAt)) - Number(new Date(objB.publishedAt))
+);
+
 /* console.log('\n' + image + ' képgeci \n'); */
 ---
 
@@ -19,8 +24,8 @@ const { headline, content, image, author, publishedAt } = Astro.props;
     <section>
       <div class="flex flex-wrap justify-center w-11/12 mx-auto">
         {
-          posts &&
-            posts.map((post) => (
+          sortedArray &&
+            sortedArray.map((post) => (
               <>
                 <Card
                   headline={post.headline}
