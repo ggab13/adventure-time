@@ -106,7 +106,9 @@ const date = new Date(publishedAt);
               content2.map((obj) => (
                 <>
                   <div class="">
-                    <h2 class="text-amber text-3xl p-2">{obj.subhead}</h2>
+                    <h2 class="text-amber text-2xl lg:text-3xl p-2">
+                      {obj.subhead}
+                    </h2>
                     <p class="p-4 m-2 text-xl font-judson">{obj.content}</p>
                     <div class="flex flex-wrap justify-center">
                       {obj.imagesTest.map((obj) => (
