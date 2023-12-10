@@ -13,7 +13,7 @@ const { headline, content, image, author, publishedAt } = Astro.props;
 
 const sortedArray = posts.sort(
   (objA, objB) =>
-    Number(new Date(objA.publishedAt)) - Number(new Date(objB.publishedAt))
+    Number(new Date(objB.publishedAt)) - Number(new Date(objA.publishedAt))
 );
 
 /* console.log('\n' + image + ' képgeci \n'); */
