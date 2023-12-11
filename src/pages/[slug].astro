@@ -52,7 +52,7 @@ const {
 const date = new Date(publishedAt);
 ---
 
-<Layout>
+<Layout title={headline}>
   <Main>
     <!--  <div class="w-[500px] m-auto">
       <a data-fslightbox="gallery" href="https://i.imgur.com/fsyrScY.jpg">
@@ -149,7 +149,7 @@ const date = new Date(publishedAt);
       >
         Galéria
       </h1>
-      <div id="gallery" class="flex flex-wrap justify-center p-5">
+      <div id="gallery" class="flex flex-wrap justify-center p-5 mx-auto">
         {
           imagesGallery.map((kep) => (
             <>
