@@ -86,9 +86,9 @@ const date = new Date(publishedAt);
               >{
                 date.getUTCFullYear() +
                   '.' +
-                  date.getUTCMonth() +
+                  (date.getUTCMonth()+1) +
                   '.' +
-                  (date.getUTCDate()+1) +
+                  date.getUTCDate() +
                   '. - ' +
                   date.getUTCHours() +
                   ':' +
