@@ -85,14 +85,11 @@ const date = new Date(publishedAt);
             <span
               >{
                 date.getUTCFullYear() +
-                  '.' +
+                  '-' +
                   (date.getUTCMonth()+1) +
-                  '.' +
+                  '-' +
                   date.getUTCDate() +
-                  '. - ' +
-                  date.getUTCHours() +
-                  ':' +
-                  date.getUTCMinutes()
+                  ' '                
               }</span
             >
             <span class="text-amber text-2xl">|</span>
