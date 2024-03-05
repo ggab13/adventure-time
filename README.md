@@ -1,7 +1,8 @@
 # Funtazia
 
 
-![funtazia](https://github.com/ggab13/adventure-time/assets/67071512/fef41c61-f4da-4357-bb45-92ce2025674d)
+![Funtazia](https://github.com/ggab13/adventure-time/assets/67071512/a6a200ba-a6d0-4e8f-8ad3-ea326b6ea517)
+
 
 
 
@@ -13,7 +14,7 @@ You can view the live demo of this project [--> Here <--](https://ggab13.github.
 
 ## Built With
 
-[![My Skills](https://skillicons.dev/icons?i=astro,sanity,tailwind)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=astro,tailwind,js,css,html)](https://skillicons.dev)
 
 ## 🚀 Project Structure
 
