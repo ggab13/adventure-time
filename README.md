@@ -1,16 +1,19 @@
-# Astro Starter Kit: Basics
+# Funtazia
 
-```sh
-npm create astro@latest -- --template basics
-```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+![funtazia](https://github.com/ggab13/adventure-time/assets/67071512/fef41c61-f4da-4357-bb45-92ce2025674d)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+
+## Description
+
+This is a personal travel blog site made with Astro and Sanity CMS.
+
+You can view the live demo of this project [--> Here <--](https://ggab13.github.io/adventure-time/).
+
+## Built With
+
+[![My Skills](https://skillicons.dev/icons?i=astro,sanity,tailwind)](https://skillicons.dev)
 
 ## 🚀 Project Structure
 
